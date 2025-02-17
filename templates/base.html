@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>FotoBlog</title>
+    </head>
+    <body>
+        <h1>FotoBlog</h1>
+        {% block content %}{% endblock content %}
+        {% if user.is_authenticated %}
+        <p>Vous etes connectes en tant que {{user.username}} et votre role est {{ user.role }}. Vous pouvez vous deconnecter en cliquant <a href="{% url 'logout' %}">ici</a></p>
+        {% endif %}
+    </body>
+</html>
